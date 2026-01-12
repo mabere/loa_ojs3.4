@@ -1,83 +1,70 @@
-Tentu saja, bro. Membuat dokumentasi adalah langkah final yang paling profesional. Plugin yang hebat harus disertai dengan panduan yang hebat pula agar orang lain bisa menggunakannya dengan mudah.
+Dokumentasi & Panduan Pengguna: Plugin Letter of Acceptance (LoA) OJS
 
-Mari kita buat dokumentasi dan panduan pengguna yang lengkap untuk plugin LoA kita.
+1. Pengantar
 
----
+Letter of Acceptance (LoA) adalah plugin untuk Open Journal Systems (OJS) 3.4+ yang mengotomatiskan seluruh proses pembuatan dan manajemen Letter of Acceptance (LoA). Ketika editor accept naskah, plugin otomatis akan mengenerate file PDF LoA berisi logo jurnal, QR code (bisa diverifikasi), dan tombol unduh untuk editor maupun penulis.
 
-## \#\# Dokumentasi & Panduan Pengguna: Plugin Letter of Acceptance (LoA) OJS
+2. Fitur Utama
 
-### **1. Pengenalan**
+- Pembuatan PDF Otomatis: LoA dalam format PDF langsung digenerate saat editor mengklik "Accept Submission".
+- Template mudah disesuaikan: Manajer Jurnal dapat dengan mudah mengubah isi header, body, dan footer surat melalui halaman Pengaturan plugin tanpa menyentuh kode.
+- Logo Jurnal Dinamis: Plugin secara otomatis mengambil dan menampilkan logo header jurnal yang sudah diunggah di pengaturan OJS, membuat setiap LoA terlihat resmi.
+- Verifikasi QR Code: Setiap LoA dilengkapi dengan QR Code unik yang mengarah ke halaman verifikasi di situs jurnal, meningkatkan keamanan dan keaslian dokumen.
+- URL Verifikasi Aman: URL verifikasi diamankan dengan sebuah _token_ rahasia untuk mencegah akses tidak sah ke detail naskah lain.
+- Akses Mudah: Tombol "Unduh Letter of Acceptance" secara otomatis muncul di dasbor editor dan penulis setelah naskah diterima.
+- Logika Cerdas: Tombol unduh akan otomatis hilang jika status penerimaan naskah dibatalkan, memastikan hanya naskah yang valid yang memiliki akses ke LoA.
 
-Plugin _Letter of Acceptance_ (LoA) adalah sebuah alat bantu untuk Open Journal Systems (OJS) 3.4+ yang mengotomatiskan seluruh proses pembuatan dan manajemen Surat Penerimaan Naskah. Ketika seorang editor menerima sebuah naskah, plugin ini akan secara otomatis membuat file PDF LoA yang profesional, lengkap dengan logo jurnal, tanda tangan QR code yang aman, dan tombol unduh yang mudah diakses baik oleh editor maupun penulis.
-
-### **2. Fitur Utama**
-
-- **Pembuatan PDF Otomatis:** LoA dalam format PDF langsung dibuat saat editor mengklik "Accept Submission".
-- **Template yang Dapat Disesuaikan:** Manajer Jurnal dapat dengan mudah mengubah isi header, body, dan footer surat melalui halaman Pengaturan plugin tanpa menyentuh kode.
-- **Logo Jurnal Dinamis:** Plugin secara otomatis mengambil dan menampilkan logo header jurnal yang sudah diunggah di pengaturan OJS, membuat setiap LoA terlihat resmi.
-- **Verifikasi QR Code:** Setiap LoA dilengkapi dengan QR Code unik yang mengarah ke halaman verifikasi di situs jurnal, meningkatkan keamanan dan keaslian dokumen.
-- **URL Verifikasi Aman:** URL verifikasi diamankan dengan sebuah _token_ rahasia untuk mencegah akses tidak sah ke detail naskah lain.
-- **Akses Mudah:** Tombol "Unduh Letter of Acceptance" secara otomatis muncul di dasbor editor dan penulis setelah naskah diterima.
-- **Logika Cerdas:** Tombol unduh akan otomatis hilang jika status penerimaan naskah dibatalkan, memastikan hanya naskah yang valid yang memiliki akses ke LoA.
-
----
-
-### **3. Instalasi**
+3. Instalasi
 
 Ikuti langkah-langkah berikut untuk menginstal plugin:
 
-1.  **Unduh Folder Plugin:**
-    Unduh folder `loa` yang berisi semua file plugin yang telah kita buat (`LoaPlugin.php`, `LoaHandler.php`, `form/`, `pages/`, `templates/`, `locale/`).
+1.  Unduh Folder Plugin:
+    Unduh folder `loa` yang berisi file (`LoaPlugin.php`, `LoaHandler.php`, `form/`, `pages/`, `templates/`, `locale/`).
 
-2.  **Unduh Library Pendukung:**
-    Plugin ini memerlukan dua _library_ eksternal. Unduh keduanya:
+2.  Unduh Library Pendukung:
+    Plugin ini memerlukan dua library eksternal yang dapat diunduh pada link:
 
-    - **Dompdf** (untuk membuat PDF): [Unduh di sini](https://github.com/dompdf/dompdf/releases). Pastikan mengunduh file ZIP rilisnya (misalnya, `dompdf_2-0-7.zip`).
-    - **phpqrcode** (untuk membuat QR Code): [Unduh di sini](https://sourceforge.net/projects/phpqrcode/files/).
+    - Dompdf (untuk membuat PDF): [Unduh di sini](https://github.com/dompdf/dompdf/releases). Pastikan mengunduh file ZIP rilisnya (misalnya, `dompdf_2-0-7.zip`).
+    - phpqrcode (untuk membuat QR Code): [Unduh di sini](https://sourceforge.net/projects/phpqrcode/files/).
 
-3.  **Susun Struktur Folder:**
+3.  Struktur Folder:
 
-    - Salin folder `loa` ke dalam direktori `plugins/generic/` di instalasi OJS Anda.
-    - Ekstrak **Dompdf**, ubah nama foldernya menjadi `dompdf`, lalu letakkan di dalam folder `loa`.
-    - Ekstrak **phpqrcode**, pastikan nama foldernya adalah `phpqrcode`, lalu letakkan di dalam folder `loa`.
+    - Salin folder `loa` ke dalam direktori `plugins/generic/` di instalasi OJS.
+    - Ekstrak Dompdf, ubah nama foldernya menjadi `dompdf`, lalu letakkan di dalam folder `loa`.
+    - Ekstrak phpqrcode, pastikan nama foldernya adalah `phpqrcode`, lalu letakkan di dalam folder `loa`.
 
     Struktur akhir di dalam folder `loa` akan terlihat seperti ini:
 
-    ```
     /plugins/generic/loa/
     ├── dompdf/
-    ├── classes/form/
+    ├── form/
     ├── locale/
     ├── pages/
     ├── phpqrcode/
-    ├── public/
     ├── templates/
     ├── LoaPlugin.php
     └── version.xml
-    ```
 
-4.  **Buat Folder Penyimpanan Publik:**
+4.  Buat Folder Penyimpanan Publik:
 
     - Di dalam direktori root OJS Anda, buka folder `public/`.
     - Buat folder baru bernama `loa`. Path-nya akan menjadi `public/loa/`. Folder ini digunakan untuk menyimpan file PDF yang dihasilkan.
 
-5.  **Aktivasi Plugin:**
+5.  Aktivasi Plugin:
 
     - Masuk ke OJS sebagai Administrator.
-    - Buka **Settings \> Website \> Plugins \> Installed Plugins**.
+    - Buka Settings \> Website \> Plugins \> Installed Plugins.
     - Cari "Letter of Acceptance Plugin" di bawah kategori "Generic Plugins" dan centang kotak untuk mengaktifkannya.
 
----
+4. Konfigurasi (Wajib Dilakukan)
 
-### **4. Konfigurasi (Wajib Dilakukan)**
+Setelah plugin aktif, atur template surat.
 
-Setelah plugin aktif, Anda perlu mengatur template surat.
+1.  Di halaman Installed Plugins, klik link "Settings" yang ada di samping "Letter of Acceptance Plugin".
 
-1.  Di halaman **Installed Plugins**, klik link **"Settings"** yang ada di samping "Letter of Acceptance Plugin".
+2.  Halaman form akan muncul. Isi kolom Header, Body, dan Footer dengan teks yang Anda inginkan.
 
-2.  Sebuah jendela modal akan muncul. Isi kolom **Header, Body, dan Footer** dengan teks yang Anda inginkan.
-
-3.  Anda dapat menggunakan variabel-variabel berikut di dalam teks Anda, yang akan diganti secara otomatis:
+3.  Variabel-variabel berikut dapat digunakan untuk menampilkan teks secara otomatis:
 
     - `{$journalLogo}`: Menampilkan logo header jurnal Anda.
     - `{$journalTitle}`: Nama jurnal.
@@ -85,30 +72,29 @@ Setelah plugin aktif, Anda perlu mengatur template surat.
     - `{$submissionId}`: ID naskah.
     - `{$acceptanceDate}`: Tanggal naskah diterima.
     - `{$authorNamesString}`: Daftar nama penulis, dipisahkan koma.
-    - `{$qrCodeDataUri}`: **(Disarankan)** Gunakan di dalam tag `<img>` untuk menampilkan QR Code. Contoh: `<img src="{$qrCodeDataUri}" width="90">`.
+    - `{$qrCodeDataUri}`: (Disarankan) Gunakan di dalam tag `<img>` untuk menampilkan QR Code. Contoh: `<img src="{$qrCodeDataUri}" width="90">`.
 
-4.  Klik **Save**.
+4.  Klik Save.
 
----
+5. Panduan Pengguna
 
-### **5. Panduan Pengguna**
 
-#### **Untuk Editor/Manajer Jurnal:**
+## Untuk Editor/Manajer Jurnal:
 
-- **Proses:** Lakukan alur kerja editorial seperti biasa. Saat Anda yakin sebuah naskah layak diterima, klik tombol **"Accept Submission"**.
-- **Otomatisasi:** Saat itu juga, plugin akan membuat dan menyimpan file PDF LoA di server.
-- **Unduh:** Buka halaman workflow naskah tersebut. Sebuah tombol **"Unduh Letter of Acceptance"** akan tersedia di samping judul artikel.
+- Proses: Lakukan alur kerja editorial seperti biasa. Saat Anda yakin sebuah naskah layak diterima, klik tombol "Accept Submission".
+- Otomatisasi: Saat itu juga, plugin akan membuat dan menyimpan file PDF LoA di server.
+- Unduh: Buka halaman workflow naskah tersebut. Sebuah tombol "Unduh Letter of Acceptance" akan tersedia di samping judul artikel.
 
-#### **Untuk Penulis (Author):**
+## Untuk Penulis (Author):
 
-- **Notifikasi:** Penulis akan melihat status naskah mereka berubah menjadi "Accepted" atau masuk ke tahap selanjutnya.
-- **Unduh:** Penulis dapat masuk ke dasbor mereka dan membuka halaman submisi yang telah diterima. Di bagian atas, akan ada tombol **"Unduh Letter of Acceptance"** yang bisa mereka gunakan untuk mengunduh surat tersebut.
+- Notifikasi: Penulis akan melihat status naskah mereka berubah menjadi "Accepted" atau masuk ke tahap selanjutnya.
+- Unduh: Penulis dapat masuk ke dasbor mereka dan membuka halaman submisi yang telah diterima. Di bagian atas, akan ada tombol "Unduh Letter of Acceptance" yang bisa mereka gunakan untuk mengunduh surat tersebut.
 
 # Letter of Acceptance (LoA) Plugin
 
     Author: Ramli
     Email: ramli.baharuddin@gmail.com
-    Contributions: Gemini AI
+    Contributions: Gemini, Grok & ChatGpt
 
 ## About
 
@@ -129,7 +115,7 @@ Setelah plugin aktif, Anda perlu mengatur template surat.
 
 ## System Requirements
 
-    - OJS 3.4 or later
+    - OJS 3.4 (tested on 3.4.0.9)
     - PHP with GD2 extension enabled (for QR Code generation).
     - This plugin bundles the necessary versions of Dompdf and phpqrcode.
 
@@ -166,4 +152,4 @@ Setelah plugin aktif, Anda perlu mengatur template surat.
 
 ## Contact/Support
 
-    For questions or to report issues, please use the PKP support forum: https://forum.pkp.sfu.ca
+    Github: @mabere
