@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-30T06:56:41-07:00\n"
+"PO-Revision-Date: 2019-09-30T06:56:41-07:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.generic.loa.displayName"
+msgstr "Surat Keterangan Naskah Diterima"
+
+msgid "plugins.generic.loa.description"
+msgstr "Buat Surat Keterangan Naskah Diterima (LoA) bila naskah diterima."
+
+msgid "plugins.generic.loa.download"
+msgstr "Unduh LoA"
+
+msgid "plugins.generic.loa.available"
+msgstr "Surat Penerimaan Naskah (LoA) untuk submisi ini telah diterbitkan dan sekarang tersedia untuk diunduh."
+
+msgid "plugins.generic.loa.unavailable"
+msgstr "Surat Penerimaan Naskah (LoA) akan tersedia untuk diunduh di sini setelah statusnya diterima."
+
+msgid "plugins.generic.loa.tab"
+msgstr "Surat Penerimaan Naskah"
+
+msgid "plugins.generic.loa.verification.valid"
+msgstr "Dokumen Terverifikasi Valid"
+
+msgid "plugins.generic.loa.verification.validMessage"
+msgstr "Surat Keterangan Naskah Diterima (LoA) valid dan telah diterbitkan untuk naskah berikut."
+
+msgid "plugins.generic.loa.verification.invalid"
+msgstr "Dokumen Tidal Valid"
+
+msgid "plugins.generic.loa.verification.invalidMessage"
+msgstr "Tautan verifikasi salah atau dokumen tidak ditemukan."
+
+msgid "plugins.generic.loa.submissionId"
+msgstr "ID Naskah"
+
+msgid "plugins.generic.loa.settings.template"
+msgstr "Template Surat Keterangan Naskah Diterima"
+
+msgid "plugins.generic.loa.settings.template.description"
+msgstr "Ubah isi Surat Keterangan Naskah Diterima. Gunakan variabel untuk otomasi teks: {$journalTitle}, {$articleTitle}, {$submissionId}, {$acceptanceDate}, {$authorNamesString}, {$qrCodeDataUri}, {$journalLogo}"
+
+msgid "plugins.generic.loa.settings.header"
+msgstr "Bagian Kepala"
+
+msgid "plugins.generic.loa.settings.body"
+msgstr "Bagian Isi"
+
+msgid "plugins.generic.loa.settings.footer"
+msgstr "Bagian Penutup"
+
+msgid "plugins.generic.loa.settings.saved"
+msgstr "Pengaturan plugin Surat Keterangan Naskah Diterima sudah disimpan."
+
+msgid "plugins.generic.loa.settings.genre"
+msgstr "Komponen File (Genre)"
+
+msgid "plugins.generic.loa.settings.genre.label"
+msgstr "Komponen LoA"
+
+msgid "plugins.generic.loa.settings.genre.description"
+msgstr "Silakan buat komponen baru untuk LoA di bagian Settings > Workflow > Components. Lalu pilih komponen yang tampil di sini. Komponen akan digunakan untuk membuat file PDF submisi resmi."
+
+msgid "plugins.generic.loa.settings.genre.noGenres"
+msgstr "Tidak ada komponen file yang telah dibuat untuk jurnal Ini. Silakan buat komponen Surat Keterangan Naskah Diterima di bagian Settings > Workflow > Components terlebih dahulu."

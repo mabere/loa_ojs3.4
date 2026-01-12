@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-30T06:56:41-07:00\n"
+"PO-Revision-Date: 2019-09-30T06:56:41-07:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "plugins.generic.loa.displayName"
+msgstr "Letter of Acceptance Plugin"
+
+msgid "plugins.generic.loa.description"
+msgstr "Generates a Letter of Acceptance (LoA) for authors of accepted submissions."
+
+msgid "plugins.generic.loa.download"
+msgstr "Download LoA"
+
+msgid "plugins.generic.loa.available"
+msgstr "The Letter of Acceptance for this submission has been issued and is now available for download."
+
+msgid "plugins.generic.loa.unavailable"
+msgstr "A Letter of Acceptance will be available for download here once the submission has been accepted by the editorial team."
+
+msgid "plugins.generic.loa.tab"
+msgstr "Letter of Acceptance"
+
+msgid "plugins.generic.loa.verification.valid"
+msgstr "Document Verified"
+
+msgid "plugins.generic.loa.verification.validMessage"
+msgstr "This Letter of Acceptance is valid and has been issued for the following submission."
+
+msgid "plugins.generic.loa.verification.invalid"
+msgstr "Invalid Document"
+
+msgid "plugins.generic.loa.verification.invalidMessage"
+msgstr "The verification link is incorrect or the submission could not be found."
+
+msgid "plugins.generic.loa.submissionId"
+msgstr "Submission ID"
+
+msgid "plugins.generic.loa.settings.template"
+msgstr "Letter of Acceptance Template"
+
+msgid "plugins.generic.loa.settings.template.description"
+msgstr "Customize the content of the Letter of Acceptance. The following variables will be automatically replaced: {$journalTitle}, {$articleTitle}, {$submissionId}, {$acceptanceDate}, {$authorNamesString}, {$qrCodeDataUri}, {$journalLogo}."
+
+msgid "plugins.generic.loa.settings.header"
+msgstr "Header"
+
+msgid "plugins.generic.loa.settings.body"
+msgstr "Body"
+
+msgid "plugins.generic.loa.settings.footer"
+msgstr "Footer"
+
+msgid "plugins.generic.loa.settings.saved"
+msgstr "The Letter of Acceptance plugin settings have been saved."
+
+msgid "plugins.generic.loa.settings.genre"
+msgstr "File Component (Genre)"
+
+msgid "plugins.generic.loa.settings.genre.label"
+msgstr "LoA Component"
+
+msgid "plugins.generic.loa.settings.genre.description"
+msgstr "Please create a new component for the LoA file under Settings > Workflow > Components. Then. select that component here. This will be used properly archive the generated PDF as an official submission file."
+
+msgid "plugins.generic.loa.settings.genre.noGenres"
+msgstr "No file components have been created for this journal. Please go to Settings > Workflow > Components to create one for the Lfetter of Acceptance."
